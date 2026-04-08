@@ -136,8 +136,8 @@ const projects: Project[] = [
     technology: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
     description:
       "A personal portfolio showcases my expertise in modern web technologies. Built with Next.js, React, Tailwind CSS, and Framer Motion. The clean, modern design includes a typewriter effect, theme toggle, and mobile-friendly bottom navigation, perfectly demonstrating my frontend and backend proficiency",
-    live: 'sahil-kalarkar.vercel.app/',
-    code: 'https://github.com/SahilKalarkar/sahil-kalarkar',
+    live: 'sahil-d-kalarkar.vercel.app',
+    code: 'https://github.com/SahilKalarkar/Sahil_Kalarkar',
   },
   {
     id: 4,
@@ -176,7 +176,7 @@ const Home: React.FC = () => {
         <meta property="og:title" content="My page title" key="title" />
       </Head>
       <section ref={themeRef}>
-        <section className="container mx-auto pt-15 pl-15 pr-15">
+        <section className="container mx-auto max-w-7xl">
           {/*--------------------------- Home Section Starts --------------------*/}
           <div className="flex flex-col-reverse md:justify-evenly items-center md:flex-row pb-10">
             <div id="#">
@@ -425,58 +425,57 @@ const Home: React.FC = () => {
           {/*--------------------------- Skills End ---------------------------- */}
 
           {/*---------------------------- Project Starts -------------------------*/}
-          <div className={`flex items-center justify-center px-4 py-10`}>
-            <div className="max-w-7xl w-full">
-              <h1 className="text-2xl font-bold hover:underline mb-6">
-                Projects
-              </h1>
-              <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
-                {projects.map((project, id) => (
-                  <div
-                    key={id}
-                    className={`border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 p-6 flex flex-col justify-between h-full`}
-                  // ${id === 3 ? "lg:col-start-2" : ""}
-                  >
-                    {/* Project Title */}
-                    <div className="text-lg font-semibold mb-3">
-                      {project.title}
-                    </div>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technology.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="text-xs bg-blue-100 text-blue-800 font-medium px-3 py-1 rounded-full"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="text-sm">{project.description}</p>
-                    <div className="flex justify-center gap-4 text-sm!">
-                      <Link
-                        href={project.code}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 text-indigo-500 cursor-pointer hover:underline mt-2 font-semibold"
-                      >
-                        <FaGithub /> Code
-                      </Link>
-                      <Link
-                        href={`https://${project.live}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 text-green-500 cursor-pointer hover:underline mt-2 font-semibold"
-                      >
-                        <FiExternalLink /> Live
-                      </Link>
-                    </div>
+          <div className="w-full">
+            <h1 className="text-2xl font-bold hover:underline mb-6">
+              Projects
+            </h1>
+            <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+              {projects.map((project, id) => (
+                <div
+                  key={id}
+                  className={`border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 p-6 flex flex-col justify-between h-full`}
+                // ${id === 3 ? "lg:col-start-2" : ""}
+                >
+                  {/* Project Title */}
+                  <div className="text-lg font-semibold mb-3">
+                    {project.title}
                   </div>
-                ))}
-              </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technology.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-blue-100 text-blue-800 font-medium px-3 py-1 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-sm">{project.description}</p>
+                  <div className="flex justify-center gap-4 text-sm!">
+                    <Link
+                      href={project.code}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1 text-indigo-500 cursor-pointer hover:underline mt-2 font-semibold"
+                    >
+                      <FaGithub /> Code
+                    </Link>
+                    <Link
+                      href={`https://${project.live}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1 text-green-500 cursor-pointer hover:underline mt-2 font-semibold"
+                    >
+                      <FiExternalLink /> Live
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           {/*----------------------------- Project End ---------------------------*/}
         </section>
+
         <section className="container mx-auto pl-15 pr-15 pb-10">
           {/*------------------------------- Footer Starts -----------------------------*/}
           <div className="pt-10">
